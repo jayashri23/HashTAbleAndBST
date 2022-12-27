@@ -1,8 +1,9 @@
 package com.hashtableandbst;
 
 public class MyMapNode {
-    String key;
+
     int data;
+    String key;
     MyMapNode next;
     MyMapNode(String key, int data)
     {

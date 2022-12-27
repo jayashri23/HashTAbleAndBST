@@ -4,23 +4,30 @@ public class HashTableOperation {
     MyMapNode head = null;
     MyMapNode tail = null;
 
-    public void insert(String data, int count) {
+    public void insert(String data, int count)
+    {
         MyMapNode newNode = new MyMapNode(data, count);
-        if (head == null) {
+        if (head == null)
+        {
             head = newNode;
-        } else {
+        }
+        else
+        {
             tail.next = newNode;
             newNode.next = null;
         }
         tail = newNode;
     }
-
-    public void display() {
+    public void display()
+    {
         MyMapNode current = head;
         if (head == null) {
-            return ;
-        } else {
-            while (current != null) {
+            return;
+        }
+        else
+        {
+            while (current != null)
+            {
                 System.out.println(current.key + "=" + current.data);
                 current = current.next;
             }
@@ -28,7 +35,7 @@ public class HashTableOperation {
     }
 
     public static void hashTableOperation(String sentence, HashTableOperation hashTable) {
-        String[] string = sentence.toLowerCase().split(" ");// splitting words and store them in array
+        String[] string = sentence.toLowerCase().split(" ");// spliting words and store them in array
 
         int count = 1;
         for (int i = 0; i < string.length; i++) {
@@ -48,19 +55,18 @@ public class HashTableOperation {
             }
             count = 1;
         }
-        for (String s : string) {
+        for (int i = 0; i < string.length; i++) {
 
-            if (s != "-1") {
-                hashTable.insert(s, count);
+            if ( string[i] != "-1"){
+                hashTable.insert(string[i],count);
             }
         }
     }
-
     public static void main(String[] args) {
         HashTableOperation hashTable = new HashTableOperation();
         System.out.println("HashTable Operation");
         String string = "To be or not to be";
-        hashTableOperation(string, hashTable);
+        hashTableOperation(string,hashTable);
         hashTable.display();
     }
 }
